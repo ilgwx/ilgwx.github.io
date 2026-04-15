@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页 | ilgwx</title>
+    <title>CampusCycle | 校园循环经济平台</title>
     <style>
         * {
             margin: 0;
@@ -11,320 +11,1313 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #333;
+            --light-text: #7f8c8d;
+            --background-color: #f9f9f9;
+            --white: #fff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
         
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* 菜单切换按钮 */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            transition: var(--transition);
+        }
+        
+        .desktop-only {
+            display: block;
+        }
+        
+        /* 移动端菜单 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .desktop-only {
+                display: none;
+            }
+            
+            .nav-links .cta-button {
+                margin-top: 10px;
+            }
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .cta-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
         }
         
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            border: 3px solid #3498db;
+            color: var(--text-color);
+            line-height: 1.2;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        
-        .title {
+        .hero p {
             font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            color: var(--light-text);
         }
         
-        .social-links {
+        .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
-        .social-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
+        .btn {
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1rem;
         }
         
-        .social-link:hover {
-            background-color: #2980b9;
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
         }
         
-        section {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+        .btn-primary:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
         }
         
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
         }
         
-        .achievements {
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--text-color);
+        }
+        
+        .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            gap: 40px;
         }
         
-        .achievement {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .achievement:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .achievement h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        
-        .achievement p {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        .project {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            transition: transform 0.3s, box-shadow 0.3s;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .project:last-child {
-            border-bottom: none;
-        }
-        
-        .project h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-        
-        .project p {
-            margin-bottom: 10px;
-        }
-        
-        .project-link {
-            display: inline-block;
-            padding: 5px 15px;
-            background-color: #2ecc71;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .project-link:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .skill-category {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .skill-category h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #3498db;
-        }
-        
-        .skill-category ul {
-            list-style: none;
-        }
-        
-        .skill-category li {
-            margin-bottom: 5px;
-            color: #7f8c8d;
-        }
-        
-        footer {
+        .step {
             text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            padding: 30px;
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
         }
         
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .step p {
+            color: var(--light-text);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        /* Products */
+        .products {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--light-text);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .product-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .product-button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            margin-bottom: 10px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-card li:before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* About Us */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background-color: #e0e0e0;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--light-text);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .submit-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .nav-links {
+                display: none;
             }
             
-            header {
-                padding: 20px 0;
-            }
-            
-            h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
             
-            section {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
                 padding: 20px;
             }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20avatar%20portrait%20of%20a%20software%20developer%2C%20clean%20background%2C%20high%20quality&image_size=square" alt="Avatar" class="avatar">
-            <h1>ilgwx</h1>
-            <p class="title">软件开发者 | 技术爱好者</p>
-            <div class="social-links">
-                <a href="https://github.com/ilgwx" class="social-link" target="_blank">GitHub</a>
-                <a href="mailto:your.email@example.com" class="social-link">邮箱</a>
-                <a href="#" class="social-link">简历</a>
-            </div>
-        </header>
-        
-        <section id="about">
-            <h2>关于我</h2>
-            <p>你好！我是 ilgwx，一名热爱技术的软件开发者。我专注于前端开发和后端技术，喜欢探索新的技术栈和解决复杂的问题。</p>
-            <p>我热衷于开源项目，并且不断学习和提升自己的技术能力。</p>
-        </section>
-        
-        <section id="achievements">
-            <h2>成就</h2>
-            <div class="achievements">
-                <div class="achievement">
-                    <h3>开源项目贡献</h3>
-                    <p>参与多个开源项目的开发和维护，包括大数据框架和分布式系统</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">CampusCycle</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="achievement">
-                    <h3>技术创新</h3>
-                    <p>在高性能计算领域有多项技术创新，优化算法和系统架构</p>
-                </div>
-                <div class="achievement">
-                    <h3>社区影响力</h3>
-                    <p>积极参与技术社区，分享知识和经验，获得广泛认可</p>
-                </div>
-                <div class="achievement">
-                    <h3>学习能力</h3>
-                    <p>持续学习新技术，保持对前沿技术的敏感度和探索精神</p>
+                <ul class="nav-links">
+                    <li><a href="#how-it-works">如何运作</a></li>
+                    <li><a href="#features">功能</a></li>
+                    <li><a href="#products">产品</a></li>
+                    <li><a href="#pricing">定价</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#" class="cta-button">开始使用</a></li>
+                </ul>
+                <a href="#" class="cta-button desktop-only">开始使用</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Turn your dorm clutter into cash</h1>
+                <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">立即开始</a>
+                    <a href="#how-it-works" class="btn btn-secondary">了解更多</a>
                 </div>
             </div>
-        </section>
-        
-        <section id="projects">
-            <h2>项目</h2>
-            <div class="project">
-                <h3>高性能计算项目</h3>
-                <p>开发了基于分布式系统的高性能计算框架，优化了大规模数据处理能力</p>
-                <a href="#" class="project-link">查看项目</a>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">如何运作</h2>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-icon">1</div>
+                    <h3>列出物品</h3>
+                    <p>上传你的闲置物品照片，添加描述，我们的AI系统会为你提供合理的价格建议。</p>
+                </div>
+                <div class="step fade-in delay-1">
+                    <div class="step-icon">2</div>
+                    <h3>选择出售方式</h3>
+                    <p>你可以选择直接出售给平台获得即时现金，或者等待买家出价。</p>
+                </div>
+                <div class="step fade-in delay-2">
+                    <div class="step-icon">3</div>
+                    <h3>完成交易</h3>
+                    <p>我们提供校园内取货服务，让你轻松完成交易，无需出门。</p>
+                </div>
             </div>
-            <div class="project">
-                <h3>开源工具库</h3>
-                <p>创建了一个轻量级的工具库，提供了丰富的实用函数和组件</p>
-                <a href="#" class="project-link">查看项目</a>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>AI价格建议</h3>
+                    <p>基于市场数据和物品状况，我们的AI系统会为你提供最合理的价格建议，帮助你快速出售。</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <h3>校园匹配</h3>
+                    <p>我们优先匹配同一校园内的买家和卖家，减少物流成本，提高交易效率。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <h3>即时现金</h3>
+                    <p>选择直接出售给平台，立即获得现金，无需等待买家。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <h3>校园取货</h3>
+                    <p>我们提供校园内取货服务，让你足不出户完成交易。</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>一键宿舍清理</h3>
+                    <p>毕业生专属服务，一键清理宿舍所有闲置物品，轻松离校。</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <h3>环保贡献</h3>
+                    <p>通过循环利用，减少资源浪费，为环保事业贡献力量。</p>
+                </div>
             </div>
-            <div class="project">
-                <h3>Web应用开发</h3>
-                <p>开发了多个响应式Web应用，使用现代前端框架和后端技术</p>
-                <a href="#" class="project-link">查看项目</a>
+        </div>
+    </section>
+    
+    <!-- Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">热门物品</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">📚</div>
+                    <div class="product-info">
+                        <h3 class="product-title">大学教材</h3>
+                        <p class="product-price">¥50</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <h3 class="product-title">笔记本电脑</h3>
+                        <p class="product-price">¥2500</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-2">
+                    <div class="product-image">🛏️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">宿舍床品</h3>
+                        <p class="product-price">¥100</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-3">
+                    <div class="product-image">🖨️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">打印机</h3>
+                        <p class="product-price">¥300</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <h3 class="product-title">手机</h3>
+                        <p class="product-price">¥1200</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">🎧</div>
+                    <div class="product-info">
+                        <h3 class="product-title">耳机</h3>
+                        <p class="product-price">¥150</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
             </div>
-        </section>
-        
-        <section id="skills">
-            <h2>技能</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>前端开发</h3>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">定价方案</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in">
+                    <h3>免费版</h3>
+                    <div class="price">¥0</div>
                     <ul>
-                        <li>HTML5, CSS3, JavaScript</li>
-                        <li>React, Vue, Angular</li>
-                        <li>Responsive Design</li>
-                        <li>Webpack, Vite</li>
+                        <li>最多列出5个物品</li>
+                        <li>基础AI价格建议</li>
+                        <li>手动处理交易</li>
+                        <li>无平台取货服务</li>
                     </ul>
+                    <a href="#" class="btn btn-secondary">选择方案</a>
                 </div>
-                <div class="skill-category">
-                    <h3>后端开发</h3>
+                <div class="pricing-card fade-in delay-1">
+                    <h3>高级版</h3>
+                    <div class="price">¥9.9/月</div>
                     <ul>
-                        <li>Node.js, Express</li>
-                        <li>Python, Django, Flask</li>
-                        <li>Java, Spring Boot</li>
-                        <li>RESTful APIs</li>
+                        <li>无限物品 listing</li>
+                        <li>高级AI价格建议</li>
+                        <li>平台协助交易</li>
+                        <li>优先校园取货服务</li>
                     </ul>
+                    <a href="#" class="btn btn-primary">选择方案</a>
                 </div>
-                <div class="skill-category">
-                    <h3>数据库</h3>
+                <div class="pricing-card fade-in delay-2">
+                    <h3>企业版</h3>
+                    <div class="price">定制</div>
                     <ul>
-                        <li>MySQL, PostgreSQL</li>
-                        <li>MongoDB, Redis</li>
-                        <li>SQL, NoSQL</li>
-                        <li>Database Design</li>
+                        <li>无限物品 listing</li>
+                        <li>企业级AI分析</li>
+                        <li>专属客服支持</li>
+                        <li>全面校园服务</li>
                     </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>其他技术</h3>
-                    <ul>
-                        <li>Git, GitHub</li>
-                        <li>Docker, Kubernetes</li>
-                        <li>AWS, Cloud Services</li>
-                        <li>DevOps, CI/CD</li>
-                    </ul>
+                    <a href="#" class="btn btn-secondary">联系我们</a>
                 </div>
             </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2026 ilgwx. 保留所有权利。</p>
-        </footer>
-    </div>
+        </div>
+    </section>
+    
+    <!-- About Us -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>我们的使命</h3>
+                    <p>CampusCycle 诞生于一群大学生的创意，旨在解决毕业季宿舍物品处理的难题。我们相信，每一件闲置物品都有其价值，通过循环利用，不仅可以为学生创造额外收入，还能减少资源浪费，为环保事业做出贡献。</p>
+                    <p>我们的团队由来自不同专业的学生组成，拥有丰富的技术和商业经验。我们致力于打造一个简单、高效、安全的校园循环经济平台，让每一位学生都能轻松参与其中。</p>
+                    <a href="#" class="btn btn-primary">加入我们</a>
+                </div>
+                <div class="about-image fade-in delay-1">
+                    🏫
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>加入我们</h3>
+                    <p>无论你是学生、商家还是投资者，我们都欢迎你加入 CampusCycle 大家庭。</p>
+                    <p><strong>邮箱：</strong>contact@campuscycle.com</p>
+                    <p><strong>电话：</strong>123-456-7890</p>
+                    <p><strong>地址：</strong>北京市海淀区大学路100号</p>
+                </div>
+                <div class="contact-form fade-in delay-1">
+                    <h3>发送消息</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">发送</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CampusCycle</h3>
+                    <p>Turn your dorm clutter into cash</p>
+                    <p>让校园循环经济更加高效、便捷</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="#how-it-works">如何运作</a>
+                    <a href="#features">功能</a>
+                    <a href="#products">产品</a>
+                    <a href="#pricing">定价</a>
+                    <a href="#about">关于我们</a>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <a href="mailto:contact@campuscycle.com">contact@campuscycle.com</a>
+                    <a href="tel:123-456-7890">123-456-7890</a>
+                    <a href="#">北京市海淀区大学路100号</a>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <a href="#">微信</a>
+                    <a href="#">微博</a>
+                    <a href="#">抖音</a>
+                    <a href="#">知乎</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CampusCycle. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动导航
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // 减去头部高度
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // 在移动端点击导航链接后关闭菜单
+                    const navLinksElement = document.querySelector('.nav-links');
+                    if (window.innerWidth <= 768 && navLinksElement.classList.contains('active')) {
+                        navLinksElement.classList.remove('active');
+                    }
+                });
+            });
+            
+            // 移动端菜单切换
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinksElement = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinksElement.classList.toggle('active');
+            });
+            
+            // 按钮点击事件
+            const buttons = document.querySelectorAll('.btn, .cta-button, .product-button, .submit-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // 阻止默认行为
+                    if (this.tagName === 'A') {
+                        e.preventDefault();
+                    }
+                    
+                    // 获取按钮文本
+                    const buttonText = this.textContent.trim();
+                    
+                    // 根据按钮文本执行不同操作
+                    switch(buttonText) {
+                        case '立即开始':
+                        case '开始使用':
+                            // 滚动到产品部分
+                            const productsSection = document.querySelector('#products');
+                            if (productsSection) {
+                                window.scrollTo({
+                                    top: productsSection.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                            break;
+                        case '了解更多':
+                            // 滚动到如何运作部分
+                            const howItWorksSection = document.querySelector('#how-it-works');
+                            if (howItWorksSection) {
+                                window.scrollTo({
+                                    top: howItWorksSection.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                            break;
+                        case '查看详情':
+                            // 显示产品详情弹窗
+                            showProductDetails(this.closest('.product-card').querySelector('.product-title').textContent);
+                            break;
+                        case '选择方案':
+                            // 显示订阅确认弹窗
+                            showSubscriptionConfirm(this.closest('.pricing-card').querySelector('h3').textContent);
+                            break;
+                        case '联系我们':
+                            // 滚动到联系我们部分
+                            const contactSection = document.querySelector('#contact');
+                            if (contactSection) {
+                                window.scrollTo({
+                                    top: contactSection.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                            break;
+                        case '加入我们':
+                            // 滚动到联系我们部分
+                            const contactSection2 = document.querySelector('#contact');
+                            if (contactSection2) {
+                                window.scrollTo({
+                                    top: contactSection2.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                            break;
+                        case '发送':
+                            // 处理表单提交
+                            handleFormSubmit(e);
+                            break;
+                        default:
+                            // 其他按钮显示提示
+                            showToast('功能开发中，敬请期待！');
+                    }
+                });
+            });
+            
+            // 处理联系表单提交
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                const form = e.target.closest('form');
+                const name = form.querySelector('#name').value;
+                const email = form.querySelector('#email').value;
+                const message = form.querySelector('#message').value;
+                
+                // 简单验证
+                if (!name || !email || !message) {
+                    showToast('请填写所有必填字段！');
+                    return;
+                }
+                
+                // 模拟表单提交
+                showToast('消息已发送，我们会尽快回复您！');
+                // 重置表单
+                form.reset();
+            }
+            
+            // 显示产品详情弹窗
+            function showProductDetails(productName) {
+                // 创建弹窗
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0,0,0,0.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 2000;
+                `;
+                
+                // 弹窗内容
+                const modalContent = document.createElement('div');
+                modalContent.style.cssText = `
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 8px;
+                    max-width: 500px;
+                    width: 90%;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                `;
+                
+                modalContent.innerHTML = `
+                    <h3>${productName} - 详情</h3>
+                    <p>产品详细信息正在加载中...</p>
+                    <p>这是一个模拟的产品详情页面，实际应用中会显示产品的完整信息。</p>
+                    <button class="btn btn-primary" style="margin-top: 20px;">购买</button>
+                    <button class="btn btn-secondary" style="margin-top: 20px; margin-left: 10px;">关闭</button>
+                `;
+                
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+                
+                // 关闭按钮事件
+                modalContent.querySelector('.btn-secondary').addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+                
+                // 购买按钮事件
+                modalContent.querySelector('.btn-primary').addEventListener('click', function() {
+                    showToast('购买功能开发中，敬请期待！');
+                    document.body.removeChild(modal);
+                });
+            }
+            
+            // 显示订阅确认弹窗
+            function showSubscriptionConfirm(planName) {
+                // 创建弹窗
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0,0,0,0.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 2000;
+                `;
+                
+                // 弹窗内容
+                const modalContent = document.createElement('div');
+                modalContent.style.cssText = `
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 8px;
+                    max-width: 500px;
+                    width: 90%;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                `;
+                
+                modalContent.innerHTML = `
+                    <h3>${planName} - 订阅确认</h3>
+                    <p>您即将订阅 ${planName}，请确认您的选择。</p>
+                    <p>这是一个模拟的订阅确认页面，实际应用中会跳转到支付页面。</p>
+                    <button class="btn btn-primary" style="margin-top: 20px;">确认订阅</button>
+                    <button class="btn btn-secondary" style="margin-top: 20px; margin-left: 10px;">取消</button>
+                `;
+                
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+                
+                // 关闭按钮事件
+                modalContent.querySelector('.btn-secondary').addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+                
+                // 确认按钮事件
+                modalContent.querySelector('.btn-primary').addEventListener('click', function() {
+                    showToast('订阅成功！');
+                    document.body.removeChild(modal);
+                });
+            }
+            
+            // 显示提示信息
+            function showToast(message, type = 'success') {
+                // 创建提示元素
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                
+                // 根据类型设置不同的背景颜色
+                let bgColor = '#4CAF50'; // 成功
+                if (type === 'error') {
+                    bgColor = '#f44336'; // 错误
+                } else if (type === 'warning') {
+                    bgColor = '#ff9800'; // 警告
+                } else if (type === 'info') {
+                    bgColor = '#2196F3'; // 信息
+                }
+                
+                toast.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background-color: ${bgColor};
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    z-index: 2000;
+                    transition: all 0.3s ease;
+                    transform: translateX(100%);
+                `;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                // 显示提示
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(0)';
+                }, 100);
+                
+                // 3秒后隐藏提示
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (document.body.contains(toast)) {
+                            document.body.removeChild(toast);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+            
+            // 页面滚动时的导航栏状态变化
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                    header.style.padding = '10px 0';
+                } else {
+                    header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                    header.style.padding = '15px 0';
+                }
+            });
+            
+            // 图片加载失败的处理
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=placeholder%20image%20for%20website&image_size=square';
+                    this.alt = '图片加载失败';
+                });
+            });
+            
+            // 表单验证增强
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const requiredFields = form.querySelectorAll('[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = '#f44336';
+                            field.style.boxShadow = '0 0 0 3px rgba(244, 67, 54, 0.1)';
+                        } else {
+                            field.style.borderColor = '#ddd';
+                            field.style.boxShadow = 'none';
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        showToast('请填写所有必填字段！', 'error');
+                    }
+                });
+                
+                // 输入框焦点事件
+                const inputs = form.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('focus', function() {
+                        this.style.borderColor = 'var(--primary-color)';
+                        this.style.boxShadow = '0 0 0 3px rgba(76, 175, 80, 0.1)';
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        if (!this.value.trim() && this.hasAttribute('required')) {
+                            this.style.borderColor = '#f44336';
+                            this.style.boxShadow = '0 0 0 3px rgba(244, 67, 54, 0.1)';
+                        } else {
+                            this.style.borderColor = '#ddd';
+                            this.style.boxShadow = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 按钮点击后的加载状态
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 添加加载状态
+                    const originalText = this.textContent;
+                    this.textContent = '处理中...';
+                    this.disabled = true;
+                    
+                    // 模拟处理时间
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.disabled = false;
+                    }, 1000);
+                });
+            });
+            
+            // 滚动动画
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
