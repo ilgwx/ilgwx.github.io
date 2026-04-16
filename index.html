@@ -856,7 +856,7 @@
                 <h1>Turn your dorm clutter into cash</h1>
                 <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
                 <div class="hero-buttons">
-                    <a href="#personal-sell" class="btn btn-primary">个人出售</a>
+                    <a href="#personal-sell" class="btn btn-primary" id="hero-personal-sell-btn">个人出售</a>
                     <a href="#official-sell" class="btn btn-secondary">官方出售</a>
                 </div>
             </div>
@@ -1249,19 +1249,41 @@
     <script>
         // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
-            // 平滑滚动导航
+            // 导航链接点击事件
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80, // 减去头部高度
-                            behavior: 'smooth'
-                        });
+                    
+                    // 处理个人出售链接
+                    if (targetId === '#personal-sell') {
+                        // 滚动到个人出售页面
+                        const personalSellSection = document.querySelector('#personal-sell');
+                        if (personalSellSection) {
+                            window.scrollTo({
+                                top: personalSellSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                        
+                        // 显示发布物品表单
+                        setTimeout(() => {
+                            const sellFormContainer = document.getElementById('sell-form-container');
+                            if (sellFormContainer) {
+                                sellFormContainer.style.display = 'block';
+                                sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 500);
+                    } else if (targetId !== '#') {
+                        // 其他链接的平滑滚动
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // 减去头部高度
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                     
                     // 在移动端点击导航链接后关闭菜单
@@ -1678,6 +1700,31 @@
                 itemDescription.addEventListener('input', function() {
                     this.style.height = 'auto';
                     this.style.height = Math.min(this.scrollHeight, 300) + 'px';
+                });
+            }
+            
+            // 首页个人出售按钮点击事件
+            const heroPersonalSellBtn = document.getElementById('hero-personal-sell-btn');
+            if (heroPersonalSellBtn) {
+                heroPersonalSellBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 滚动到个人出售页面
+                    const personalSellSection = document.querySelector('#personal-sell');
+                    if (personalSellSection) {
+                        window.scrollTo({
+                            top: personalSellSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // 显示发布物品表单
+                    setTimeout(() => {
+                        const sellFormContainer = document.getElementById('sell-form-container');
+                        if (sellFormContainer) {
+                            sellFormContainer.style.display = 'block';
+                            sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 500);
                 });
             }
             
