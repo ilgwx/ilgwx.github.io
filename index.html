@@ -308,6 +308,68 @@
             margin-bottom: 20px;
         }
         
+        /* Sell Modes */
+        .sell-modes {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+        
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .mode-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .mode-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .mode-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .mode-card p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .mode-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .mode-card li {
+            margin-bottom: 10px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .mode-card li:before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
         /* Products */
         .products {
             padding: 80px 0;
@@ -326,6 +388,28 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            position: relative;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .product-badge.personal {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .product-badge.official {
+            background-color: #4CAF50;
+            color: white;
         }
         
         .product-card:hover {
@@ -473,10 +557,98 @@
             color: var(--light-text);
         }
         
+        /* Personal Sell */
+        .personal-sell {
+            padding: 80px 0;
+            background-color: #f0f8ff; /* 浅蓝色背景 */
+        }
+        
+        .personal-sell .sell-form {
+            border-top: 4px solid #3498db;
+        }
+        
+        .official-sell {
+            padding: 80px 0;
+            background-color: #f0fff4; /* 浅绿色背景 */
+        }
+        
+        .official-sell .sell-form {
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .sell-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .sell-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .sell-info p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .sell-info ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .sell-info li {
+            margin-bottom: 10px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .sell-info li:before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .sell-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sell-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .image-upload {
+            margin-top: 10px;
+        }
+        
+        .upload-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .preview-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
         /* Contact */
         .contact {
             padding: 80px 0;
-            background-color: var(--background-color);
+            background-color: var(--white);
         }
         
         .contact-content {
@@ -666,6 +838,8 @@
                     <li><a href="#how-it-works">如何运作</a></li>
                     <li><a href="#features">功能</a></li>
                     <li><a href="#products">产品</a></li>
+                    <li><a href="#personal-sell">个人出售</a></li>
+                    <li><a href="#official-sell">官方出售</a></li>
                     <li><a href="#pricing">定价</a></li>
                     <li><a href="#about">关于我们</a></li>
                     <li><a href="#contact">联系我们</a></li>
@@ -683,8 +857,41 @@
                 <h1>Turn your dorm clutter into cash</h1>
                 <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">立即开始</a>
-                    <a href="#how-it-works" class="btn btn-secondary">了解更多</a>
+                    <a href="#personal-sell" class="btn btn-primary">个人出售</a>
+                    <a href="#official-sell" class="btn btn-secondary">官方出售</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sell Modes Section -->
+    <section class="sell-modes">
+        <div class="container">
+            <h2 class="section-title">出售模式</h2>
+            <div class="modes-grid">
+                <div class="mode-card fade-in">
+                    <div class="mode-icon">👤</div>
+                    <h3>个人出售</h3>
+                    <p>用户自己上架出售物品，自主定价，负责售后。适合想要最大化收益的卖家。</p>
+                    <ul>
+                        <li>自主定价</li>
+                        <li>自己管理售后</li>
+                        <li>上传物品图片</li>
+                        <li>直接与买家沟通</li>
+                    </ul>
+                    <a href="#personal-sell" class="btn btn-primary">开始出售</a>
+                </div>
+                <div class="mode-card fade-in delay-1">
+                    <div class="mode-icon">🏢</div>
+                    <h3>官方出售</h3>
+                    <p>将物品直接出售给平台，获得即时现金，无需等待买家。适合追求便捷的卖家。</p>
+                    <ul>
+                        <li>即时现金</li>
+                        <li>平台负责售后</li>
+                        <li>快速处理</li>
+                        <li>无需管理交易</li>
+                    </ul>
+                    <a href="#official-sell" class="btn btn-secondary">立即变现</a>
                 </div>
             </div>
         </div>
@@ -753,6 +960,7 @@
             <h2 class="section-title">热门物品</h2>
             <div class="products-grid">
                 <div class="product-card fade-in">
+                    <div class="product-badge personal">个人出售</div>
                     <div class="product-image">📚</div>
                     <div class="product-info">
                         <h3 class="product-title">大学教材</h3>
@@ -761,6 +969,7 @@
                     </div>
                 </div>
                 <div class="product-card fade-in delay-1">
+                    <div class="product-badge official">官方出售</div>
                     <div class="product-image">💻</div>
                     <div class="product-info">
                         <h3 class="product-title">笔记本电脑</h3>
@@ -769,6 +978,7 @@
                     </div>
                 </div>
                 <div class="product-card fade-in delay-2">
+                    <div class="product-badge personal">个人出售</div>
                     <div class="product-image">🛏️</div>
                     <div class="product-info">
                         <h3 class="product-title">宿舍床品</h3>
@@ -777,6 +987,7 @@
                     </div>
                 </div>
                 <div class="product-card fade-in delay-3">
+                    <div class="product-badge official">官方出售</div>
                     <div class="product-image">🖨️</div>
                     <div class="product-info">
                         <h3 class="product-title">打印机</h3>
@@ -785,6 +996,7 @@
                     </div>
                 </div>
                 <div class="product-card fade-in">
+                    <div class="product-badge personal">个人出售</div>
                     <div class="product-image">📱</div>
                     <div class="product-info">
                         <h3 class="product-title">手机</h3>
@@ -793,6 +1005,7 @@
                     </div>
                 </div>
                 <div class="product-card fade-in delay-1">
+                    <div class="product-badge official">官方出售</div>
                     <div class="product-image">🎧</div>
                     <div class="product-info">
                         <h3 class="product-title">耳机</h3>
@@ -859,6 +1072,110 @@
                 </div>
                 <div class="about-image fade-in delay-1">
                     🏫
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Personal Sell Section -->
+    <section id="personal-sell" class="personal-sell">
+        <div class="container">
+            <h2 class="section-title">个人出售</h2>
+            <div class="sell-content">
+                <div class="sell-info fade-in">
+                    <h3>自主出售你的物品</h3>
+                    <p>通过个人出售模式，你可以自主定价、上传图片、管理售后，最大化你的收益。</p>
+                    <ul>
+                        <li>自主定价，获得更高收益</li>
+                        <li>上传多张物品图片</li>
+                        <li>直接与买家沟通</li>
+                        <li>灵活的交易方式</li>
+                    </ul>
+                </div>
+                <div class="sell-form fade-in delay-1">
+                    <h3>发布物品</h3>
+                    <form id="personal-sell-form">
+                        <div class="form-group">
+                            <label for="item-name">物品名称</label>
+                            <input type="text" id="item-name" name="item-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-description">物品描述</label>
+                            <textarea id="item-description" name="item-description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-price">价格 (¥)</label>
+                            <input type="number" id="item-price" name="item-price" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-category">分类</label>
+                            <select id="item-category" name="item-category" required>
+                                <option value="">请选择分类</option>
+                                <option value="books">书籍</option>
+                                <option value="electronics">电子产品</option>
+                                <option value="dorm">宿舍用品</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-images">上传图片</label>
+                            <div class="image-upload">
+                                <input type="file" id="item-images" name="item-images" multiple accept="image/*" required>
+                                <div class="upload-preview" id="image-preview"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">发布物品</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Official Sell Section -->
+    <section id="official-sell" class="official-sell">
+        <div class="container">
+            <h2 class="section-title">官方出售</h2>
+            <div class="sell-content">
+                <div class="sell-info fade-in">
+                    <h3>快速变现你的物品</h3>
+                    <p>通过官方出售模式，你可以将物品直接出售给平台，获得即时现金，无需等待买家。</p>
+                    <ul>
+                        <li>即时获得现金</li>
+                        <li>平台负责售后</li>
+                        <li>快速处理流程</li>
+                        <li>无需管理交易</li>
+                    </ul>
+                </div>
+                <div class="sell-form fade-in delay-1">
+                    <h3>出售给平台</h3>
+                    <form id="official-sell-form">
+                        <div class="form-group">
+                            <label for="official-item-name">物品名称</label>
+                            <input type="text" id="official-item-name" name="official-item-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="official-item-description">物品描述</label>
+                            <textarea id="official-item-description" name="official-item-description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="official-item-condition">物品状况</label>
+                            <select id="official-item-condition" name="official-item-condition" required>
+                                <option value="">请选择状况</option>
+                                <option value="new">全新</option>
+                                <option value="like-new">几乎全新</option>
+                                <option value="good">良好</option>
+                                <option value="fair">一般</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="official-item-images">上传图片</label>
+                            <div class="image-upload">
+                                <input type="file" id="official-item-images" name="official-item-images" multiple accept="image/*" required>
+                                <div class="upload-preview" id="official-image-preview"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">获取报价</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1295,6 +1612,77 @@
                     }, 1000);
                 });
             });
+            
+            // 图片上传预览功能
+            function setupImageUpload(inputId, previewId) {
+                const input = document.getElementById(inputId);
+                const preview = document.getElementById(previewId);
+                
+                if (input && preview) {
+                    input.addEventListener('change', function(e) {
+                        preview.innerHTML = '';
+                        const files = e.target.files;
+                        
+                        if (files.length > 0) {
+                            for (let i = 0; i < files.length; i++) {
+                                const file = files[i];
+                                if (file.type.startsWith('image/')) {
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        const img = document.createElement('img');
+                                        img.src = e.target.result;
+                                        img.className = 'preview-image';
+                                        preview.appendChild(img);
+                                    };
+                                    reader.readAsDataURL(file);
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // 初始化图片上传预览
+            setupImageUpload('item-images', 'image-preview');
+            setupImageUpload('official-item-images', 'official-image-preview');
+            
+            // 个人出售表单提交
+            const personalForm = document.getElementById('personal-sell-form');
+            if (personalForm) {
+                personalForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // 获取表单数据
+                    const formData = new FormData(this);
+                    const itemName = formData.get('item-name');
+                    const itemPrice = formData.get('item-price');
+                    
+                    // 模拟表单提交
+                    showToast(`物品 "${itemName}" 已成功发布，价格：¥${itemPrice}`);
+                    // 重置表单
+                    this.reset();
+                    document.getElementById('image-preview').innerHTML = '';
+                });
+            }
+            
+            // 官方出售表单提交
+            const officialForm = document.getElementById('official-sell-form');
+            if (officialForm) {
+                officialForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // 获取表单数据
+                    const formData = new FormData(this);
+                    const itemName = formData.get('official-item-name');
+                    
+                    // 模拟获取报价
+                    const estimatedPrice = Math.floor(Math.random() * 500) + 50;
+                    showToast(`物品 "${itemName}" 的预估报价：¥${estimatedPrice}，我们会尽快与您联系！`);
+                    // 重置表单
+                    this.reset();
+                    document.getElementById('official-image-preview').innerHTML = '';
+                });
+            }
             
             // 滚动动画
             const fadeElements = document.querySelectorAll('.fade-in');
