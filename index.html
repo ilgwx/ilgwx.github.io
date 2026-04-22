@@ -29,50 +29,19 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
-            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        /* 水平滚动容器 */
-        .horizontal-container {
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            position: relative;
+            padding: 0 20px;
         }
         
         .section {
-            min-width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            scroll-snap-align: start;
-            flex-shrink: 0;
+            scroll-margin-top: 80px;
         }
         
-        /* 隐藏滚动条 */
-        .horizontal-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .horizontal-container {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+
         
         /* Header */
         header {
@@ -192,6 +161,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 120px 0 80px;
             text-align: center;
         }
         
@@ -258,6 +228,7 @@
             background: linear-gradient(135deg, #4CAF50 0%, #2ecc71 100%);
             color: white;
             text-align: center;
+            padding: 80px 0;
         }
         
         .stats-grid {
@@ -287,6 +258,7 @@
         /* Impact Section */
         .impact {
             background-color: var(--white);
+            padding: 80px 0;
         }
         
         .impact-content {
@@ -344,6 +316,7 @@
         /* Testimonials Section */
         .testimonials {
             background-color: var(--background-color);
+            padding: 80px 0;
         }
         
         .testimonials-grid {
@@ -416,6 +389,7 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             text-align: center;
+            padding: 80px 0;
         }
         
         .cta-content {
@@ -481,6 +455,7 @@
         /* How It Works */
         .how-it-works {
             background-color: var(--white);
+            padding: 80px 0;
         }
         
         .section-title {
@@ -535,6 +510,7 @@
         /* Features */
         .features {
             background-color: var(--background-color);
+            padding: 80px 0;
         }
         
         .features-grid {
@@ -632,6 +608,7 @@
         /* Products */
         .products {
             background-color: var(--white);
+            padding: 80px 0;
         }
         
         .products-grid {
@@ -721,6 +698,7 @@
         /* Pricing */
         .pricing {
             background-color: var(--background-color);
+            padding: 80px 0;
         }
         
         .pricing-cards {
@@ -781,6 +759,7 @@
         /* About Us */
         .about {
             background-color: var(--white);
+            padding: 80px 0;
         }
         
         .about-content {
@@ -816,6 +795,7 @@
         /* Personal Sell */
         .personal-sell {
             background-color: #f0f8ff; /* 浅蓝色背景 */
+            padding: 80px 0;
         }
         
         .personal-sell .sell-form {
@@ -824,6 +804,7 @@
         
         .official-sell {
             background-color: #f0fff4; /* 浅绿色背景 */
+            padding: 80px 0;
         }
         
         .official-sell .sell-form {
@@ -902,6 +883,7 @@
         /* Contact */
         .contact {
             background-color: var(--white);
+            padding: 80px 0;
         }
         
         .contact-content {
@@ -1163,451 +1145,448 @@
         </div>
     </header>
     
-    <!-- 水平滚动容器 -->
-    <div class="horizontal-container">
-        <!-- Hero Section -->
-        <section class="section hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Turn your dorm clutter into cash</h1>
-                    <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
-                    <div class="hero-buttons">
-                        <a href="#personal-sell" class="btn btn-primary" id="hero-personal-sell-btn">立即出售</a>
-                        <a href="#official-sell" class="btn btn-secondary">获取即时报价</a>
-                    </div>
-                    <p style="margin-top: 30px; color: var(--light-text); font-size: 0.95rem;">已有 5,000+ 大学生加入平台 · 累计交易额超过 ¥2,000,000</p>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Turn your dorm clutter into cash</h1>
+                <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
+                <div class="hero-buttons">
+                    <a href="#personal-sell" class="btn btn-primary" id="hero-personal-sell-btn">立即出售</a>
+                    <a href="#official-sell" class="btn btn-secondary">获取即时报价</a>
+                </div>
+                <p style="margin-top: 30px; color: var(--light-text); font-size: 0.95rem;">已有 5,000+ 大学生加入平台 · 累计交易额超过 ¥2,000,000</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section id="stats" class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">物品已回收</div>
+                </div>
+                <div class="stat-item fade-in delay-1">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">活跃用户</div>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">覆盖高校</div>
+                </div>
+                <div class="stat-item fade-in delay-3">
+                    <div class="stat-number">¥2M+</div>
+                    <div class="stat-label">累计交易额</div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Stats Section -->
-        <section id="stats" class="section stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item fade-in">
-                        <div class="stat-number">10,000+</div>
-                        <div class="stat-label">物品已回收</div>
-                    </div>
-                    <div class="stat-item fade-in delay-1">
-                        <div class="stat-number">5,000+</div>
-                        <div class="stat-label">活跃用户</div>
-                    </div>
-                    <div class="stat-item fade-in delay-2">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">覆盖高校</div>
-                    </div>
-                    <div class="stat-item fade-in delay-3">
-                        <div class="stat-number">¥2M+</div>
-                        <div class="stat-label">累计交易额</div>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Impact Section -->
+    <section id="impact" class="section impact">
+        <div class="container">
+            <div class="impact-content">
+                <div class="impact-text fade-in">
+                    <h3>我们的环境影响</h3>
+                    <p>每一次循环利用，都在为地球减负。CampusCycle 不仅帮助学生变现闲置物品，更在推动校园可持续发展。</p>
+                    <p>通过我们的平台，减少的资源浪费和碳排放正在让我们的校园和城市变得更加绿色、环保。</p>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Impact Section -->
-        <section id="impact" class="section impact">
-            <div class="container">
-                <div class="impact-content">
-                    <div class="impact-text fade-in">
-                        <h3>我们的环境影响</h3>
-                        <p>每一次循环利用，都在为地球减负。CampusCycle 不仅帮助学生变现闲置物品，更在推动校园可持续发展。</p>
-                        <p>通过我们的平台，减少的资源浪费和碳排放正在让我们的校园和城市变得更加绿色、环保。</p>
+                <div class="impact-stats fade-in delay-1">
+                    <div class="impact-stat">
+                        <div class="impact-stat-icon">🌱</div>
+                        <div class="impact-stat-number">50吨</div>
+                        <div class="impact-stat-label">减少碳排放</div>
                     </div>
-                    <div class="impact-stats fade-in delay-1">
-                        <div class="impact-stat">
-                            <div class="impact-stat-icon">🌱</div>
-                            <div class="impact-stat-number">50吨</div>
-                            <div class="impact-stat-label">减少碳排放</div>
-                        </div>
-                        <div class="impact-stat">
-                            <div class="impact-stat-icon">💧</div>
-                            <div class="impact-stat-number">100吨</div>
-                            <div class="impact-stat-label">节约用水</div>
-                        </div>
-                        <div class="impact-stat">
-                            <div class="impact-stat-icon">♻️</div>
-                            <div class="impact-stat-number">30吨</div>
-                            <div class="impact-stat-label">减少废弃物</div>
-                        </div>
-                        <div class="impact-stat">
-                            <div class="impact-stat-icon">🌍</div>
-                            <div class="impact-stat-number">200+</div>
-                            <div class="impact-stat-label">树木等价效应</div>
-                        </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-icon">💧</div>
+                        <div class="impact-stat-number">100吨</div>
+                        <div class="impact-stat-label">节约用水</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-icon">♻️</div>
+                        <div class="impact-stat-number">30吨</div>
+                        <div class="impact-stat-label">减少废弃物</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-icon">🌍</div>
+                        <div class="impact-stat-number">200+</div>
+                        <div class="impact-stat-label">树木等价效应</div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- How It Works -->
-        <section id="how-it-works" class="section how-it-works">
-            <div class="container">
-                <h2 class="section-title">如何运作</h2>
-                <div class="steps">
-                    <div class="step fade-in">
-                        <div class="step-icon">1</div>
-                        <h3>列出物品</h3>
-                        <p>上传你的闲置物品照片，添加描述，我们的AI系统会为你提供合理的价格建议。</p>
-                    </div>
-                    <div class="step fade-in delay-1">
-                        <div class="step-icon">2</div>
-                        <h3>选择出售方式</h3>
-                        <p>你可以选择直接出售给平台获得即时现金，或者等待买家出价。</p>
-                    </div>
-                    <div class="step fade-in delay-2">
-                        <div class="step-icon">3</div>
-                        <h3>完成交易</h3>
-                        <p>我们提供校园内取货服务，让你轻松完成交易，无需出门。</p>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works" class="section how-it-works">
+        <div class="container">
+            <h2 class="section-title">如何运作</h2>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-icon">1</div>
+                    <h3>列出物品</h3>
+                    <p>上传你的闲置物品照片，添加描述，我们的AI系统会为你提供合理的价格建议。</p>
+                </div>
+                <div class="step fade-in delay-1">
+                    <div class="step-icon">2</div>
+                    <h3>选择出售方式</h3>
+                    <p>你可以选择直接出售给平台获得即时现金，或者等待买家出价。</p>
+                </div>
+                <div class="step fade-in delay-2">
+                    <div class="step-icon">3</div>
+                    <h3>完成交易</h3>
+                    <p>我们提供校园内取货服务，让你轻松完成交易，无需出门。</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Features -->
-        <section id="features" class="section features">
-            <div class="container">
-                <h2 class="section-title">核心功能</h2>
-                <div class="features-grid">
-                    <div class="feature-card fade-in">
-                        <h3>🤖 AI智能定价</h3>
-                        <p>基于市场数据和AI算法，我们为每个物品提供最合理的价格建议，让你轻松定价，快速出售。</p>
-                    </div>
-                    <div class="feature-card fade-in delay-1">
-                        <h3>🎯 精准校园匹配</h3>
-                        <p>优先匹配同校买家和卖家，减少物流成本，提高交易效率，让校园交易更便捷。</p>
-                    </div>
-                    <div class="feature-card fade-in delay-2">
-                        <h3>⚡ 即时现金变现</h3>
-                        <p>选择官方出售模式，立即获得现金，无需等待买家，资金快速到账。</p>
-                    </div>
-                    <div class="feature-card fade-in delay-3">
-                        <h3>🚚 校园取货服务</h3>
-                        <p>我们提供校园内上门取货服务，让你足不出户完成交易，省时省力。</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <h3>🧹 一键宿舍清理</h3>
-                        <p>毕业生专属服务，一键清理宿舍所有闲置物品，轻松离校，不再为处理旧物烦恼。</p>
-                    </div>
-                    <div class="feature-card fade-in delay-1">
-                        <h3>🌍 环保可持续</h3>
-                        <p>通过循环利用，减少资源浪费，每一笔交易都在为环保事业做贡献。</p>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section id="features" class="section features">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>🤖 AI智能定价</h3>
+                    <p>基于市场数据和AI算法，我们为每个物品提供最合理的价格建议，让你轻松定价，快速出售。</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <h3>🎯 精准校园匹配</h3>
+                    <p>优先匹配同校买家和卖家，减少物流成本，提高交易效率，让校园交易更便捷。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <h3>⚡ 即时现金变现</h3>
+                    <p>选择官方出售模式，立即获得现金，无需等待买家，资金快速到账。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <h3>🚚 校园取货服务</h3>
+                    <p>我们提供校园内上门取货服务，让你足不出户完成交易，省时省力。</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>🧹 一键宿舍清理</h3>
+                    <p>毕业生专属服务，一键清理宿舍所有闲置物品，轻松离校，不再为处理旧物烦恼。</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <h3>🌍 环保可持续</h3>
+                    <p>通过循环利用，减少资源浪费，每一笔交易都在为环保事业做贡献。</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section class="section testimonials">
-            <div class="container">
-                <h2 class="section-title">用户评价</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card fade-in">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-content">"马上要毕业了，宿舍里一堆东西不知道怎么处理。CampusCycle帮我把教材和小电器都卖掉了，还赚了一笔生活费！"</div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">李</div>
-                            <div class="testimonial-info">
-                                <h4>李同学</h4>
-                                <p>北京大学 · 应届毕业生</p>
-                            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">用户评价</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <div class="testimonial-content">"马上要毕业了，宿舍里一堆东西不知道怎么处理。CampusCycle帮我把教材和小电器都卖掉了，还赚了一笔生活费！"</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">李</div>
+                        <div class="testimonial-info">
+                            <h4>李同学</h4>
+                            <p>北京大学 · 应届毕业生</p>
                         </div>
                     </div>
-                    <div class="testimonial-card fade-in delay-1">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-content">"买了一个学长的旧笔记本，比新的便宜了一半，性能还很好。平台的校园匹配功能让我在同校找到了卖家，超方便！"</div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">张</div>
-                            <div class="testimonial-info">
-                                <h4>张同学</h4>
-                                <p>清华大学 · 研究生二年级</p>
-                            </div>
+                </div>
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <div class="testimonial-content">"买了一个学长的旧笔记本，比新的便宜了一半，性能还很好。平台的校园匹配功能让我在同校找到了卖家，超方便！"</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">张</div>
+                        <div class="testimonial-info">
+                            <h4>张同学</h4>
+                            <p>清华大学 · 研究生二年级</p>
                         </div>
                     </div>
-                    <div class="testimonial-card fade-in delay-2">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <div class="testimonial-content">"AI价格建议功能真的很准！我以为自己定价会很难，没想到系统给的建议让我很快就卖出了物品。"</div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">王</div>
-                            <div class="testimonial-info">
-                                <h4>王同学</h4>
-                                <p>复旦大学 · 大三学生</p>
-                            </div>
+                </div>
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <div class="testimonial-content">"AI价格建议功能真的很准！我以为自己定价会很难，没想到系统给的建议让我很快就卖出了物品。"</div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">王</div>
+                        <div class="testimonial-info">
+                            <h4>王同学</h4>
+                            <p>复旦大学 · 大三学生</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section class="section cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>准备好开始了吗？</h2>
-                    <p>加入 CampusCycle，让你的闲置物品焕发新生，同时为环保贡献一份力量。</p>
-                    <div class="cta-buttons">
-                        <a href="#personal-sell" class="btn-cta-primary" id="cta-sell-btn">立即出售</a>
-                        <a href="#official-sell" class="btn-cta-secondary" id="cta-quote-btn">获取即时报价</a>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>准备好开始了吗？</h2>
+                <p>加入 CampusCycle，让你的闲置物品焕发新生，同时为环保贡献一份力量。</p>
+                <div class="cta-buttons">
+                    <a href="#personal-sell" class="btn-cta-primary" id="cta-sell-btn">立即出售</a>
+                    <a href="#official-sell" class="btn-cta-secondary" id="cta-quote-btn">获取即时报价</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products -->
+    <section id="products" class="section products">
+        <div class="container">
+            <h2 class="section-title">热门物品</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">📚</div>
+                    <div class="product-info">
+                        <h3 class="product-title">大学教材</h3>
+                        <p class="product-price">¥50</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <h3 class="product-title">笔记本电脑</h3>
+                        <p class="product-price">¥2500</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-2">
+                    <div class="product-image">🛏️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">宿舍床品</h3>
+                        <p class="product-price">¥100</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-3">
+                    <div class="product-image">🖨️</div>
+                    <div class="product-info">
+                        <h3 class="product-title">打印机</h3>
+                        <p class="product-price">¥300</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <h3 class="product-title">手机</h3>
+                        <p class="product-price">¥1200</p>
+                        <a href="#" class="product-button">查看详情</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in delay-1">
+                    <div class="product-image">🎧</div>
+                    <div class="product-info">
+                        <h3 class="product-title">耳机</h3>
+                        <p class="product-price">¥150</p>
+                        <a href="#" class="product-button">查看详情</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Products -->
-        <section id="products" class="section products">
-            <div class="container">
-                <h2 class="section-title">热门物品</h2>
-                <div class="products-grid">
-                    <div class="product-card fade-in">
-                        <div class="product-image">📚</div>
-                        <div class="product-info">
-                            <h3 class="product-title">大学教材</h3>
-                            <p class="product-price">¥50</p>
-                            <a href="#" class="product-button">查看详情</a>
+        </div>
+    </section>
+    
+    <!-- Personal Sell Section -->
+    <section id="personal-sell" class="section personal-sell">
+        <div class="container">
+            <h2 class="section-title">个人出售</h2>
+            <div class="sell-content">
+                <div class="sell-info fade-in">
+                    <h3>自主出售你的物品</h3>
+                    <p>通过个人出售模式，你可以自主定价、上传图片、管理售后，最大化你的收益。</p>
+                    <ul>
+                        <li>自主定价，获得更高收益</li>
+                        <li>上传多张物品图片</li>
+                        <li>直接与买家沟通</li>
+                        <li>灵活的交易方式</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" id="start-selling-btn">开始发布物品</a>
+                </div>
+                <div class="sell-form fade-in delay-1" id="sell-form-container" style="display: none;">
+                    <h3>发布物品</h3>
+                    <form id="personal-sell-form">
+                        <div class="form-group">
+                            <label for="item-name">物品名称</label>
+                            <input type="text" id="item-name" name="item-name" required>
                         </div>
-                    </div>
-                    <div class="product-card fade-in delay-1">
-                        <div class="product-image">💻</div>
-                        <div class="product-info">
-                            <h3 class="product-title">笔记本电脑</h3>
-                            <p class="product-price">¥2500</p>
-                            <a href="#" class="product-button">查看详情</a>
+                        <div class="form-group">
+                            <label for="item-description">物品描述</label>
+                            <textarea id="item-description" name="item-description" required style="resize: none; min-height: 100px; max-height: 300px;"></textarea>
                         </div>
-                    </div>
-                    <div class="product-card fade-in delay-2">
-                        <div class="product-image">🛏️</div>
-                        <div class="product-info">
-                            <h3 class="product-title">宿舍床品</h3>
-                            <p class="product-price">¥100</p>
-                            <a href="#" class="product-button">查看详情</a>
+                        <div class="form-group">
+                            <label for="item-price">价格 (¥)</label>
+                            <input type="number" id="item-price" name="item-price" min="0" step="0.01" required>
                         </div>
-                    </div>
-                    <div class="product-card fade-in delay-3">
-                        <div class="product-image">🖨️</div>
-                        <div class="product-info">
-                            <h3 class="product-title">打印机</h3>
-                            <p class="product-price">¥300</p>
-                            <a href="#" class="product-button">查看详情</a>
+                        <div class="form-group">
+                            <label for="item-category">分类</label>
+                            <select id="item-category" name="item-category" required>
+                                <option value="">请选择分类</option>
+                                <option value="books">书籍</option>
+                                <option value="electronics">电子产品</option>
+                                <option value="dorm">宿舍用品</option>
+                                <option value="other">其他</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="product-card fade-in">
-                        <div class="product-image">📱</div>
-                        <div class="product-info">
-                            <h3 class="product-title">手机</h3>
-                            <p class="product-price">¥1200</p>
-                            <a href="#" class="product-button">查看详情</a>
+                        <div class="form-group">
+                            <label for="item-images">上传图片</label>
+                            <div class="image-upload">
+                                <input type="file" id="item-images" name="item-images" multiple accept="image/*" required>
+                                <div class="upload-preview" id="image-preview"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-card fade-in delay-1">
-                        <div class="product-image">🎧</div>
-                        <div class="product-info">
-                            <h3 class="product-title">耳机</h3>
-                            <p class="product-price">¥150</p>
-                            <a href="#" class="product-button">查看详情</a>
+                        <button type="submit" class="submit-button">发布物品</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Official Sell Section -->
+    <section id="official-sell" class="section official-sell">
+        <div class="container">
+            <h2 class="section-title">官方出售</h2>
+            <div class="sell-content">
+                <div class="sell-info fade-in">
+                    <h3>快速变现你的物品</h3>
+                    <p>通过官方出售模式，你可以将物品直接出售给平台，获得即时现金，无需等待买家。</p>
+                    <ul>
+                        <li>即时获得现金</li>
+                        <li>平台负责售后</li>
+                        <li>快速处理流程</li>
+                        <li>无需管理交易</li>
+                    </ul>
+                </div>
+                <div class="sell-form fade-in delay-1">
+                    <h3>出售给平台</h3>
+                    <form id="official-sell-form">
+                        <div class="form-group">
+                            <label for="official-item-name">物品名称</label>
+                            <input type="text" id="official-item-name" name="official-item-name" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="official-item-description">物品描述</label>
+                            <textarea id="official-item-description" name="official-item-description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="official-item-condition">物品状况</label>
+                            <select id="official-item-condition" name="official-item-condition" required>
+                                <option value="">请选择状况</option>
+                                <option value="new">全新</option>
+                                <option value="like-new">几乎全新</option>
+                                <option value="good">良好</option>
+                                <option value="fair">一般</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="official-item-images">上传图片</label>
+                            <div class="image-upload">
+                                <input type="file" id="official-item-images" name="official-item-images" multiple accept="image/*" required>
+                                <div class="upload-preview" id="official-image-preview"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">获取报价</button>
+                    </form>
                 </div>
             </div>
-        </section>
-        
-        <!-- Personal Sell Section -->
-        <section id="personal-sell" class="section personal-sell">
-            <div class="container">
-                <h2 class="section-title">个人出售</h2>
-                <div class="sell-content">
-                    <div class="sell-info fade-in">
-                        <h3>自主出售你的物品</h3>
-                        <p>通过个人出售模式，你可以自主定价、上传图片、管理售后，最大化你的收益。</p>
-                        <ul>
-                            <li>自主定价，获得更高收益</li>
-                            <li>上传多张物品图片</li>
-                            <li>直接与买家沟通</li>
-                            <li>灵活的交易方式</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary" id="start-selling-btn">开始发布物品</a>
-                    </div>
-                    <div class="sell-form fade-in delay-1" id="sell-form-container" style="display: none;">
-                        <h3>发布物品</h3>
-                        <form id="personal-sell-form">
-                            <div class="form-group">
-                                <label for="item-name">物品名称</label>
-                                <input type="text" id="item-name" name="item-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="item-description">物品描述</label>
-                                <textarea id="item-description" name="item-description" required style="resize: none; min-height: 100px; max-height: 300px;"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="item-price">价格 (¥)</label>
-                                <input type="number" id="item-price" name="item-price" min="0" step="0.01" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="item-category">分类</label>
-                                <select id="item-category" name="item-category" required>
-                                    <option value="">请选择分类</option>
-                                    <option value="books">书籍</option>
-                                    <option value="electronics">电子产品</option>
-                                    <option value="dorm">宿舍用品</option>
-                                    <option value="other">其他</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="item-images">上传图片</label>
-                                <div class="image-upload">
-                                    <input type="file" id="item-images" name="item-images" multiple accept="image/*" required>
-                                    <div class="upload-preview" id="image-preview"></div>
-                                </div>
-                            </div>
-                            <button type="submit" class="submit-button">发布物品</button>
-                        </form>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <h2 class="section-title">定价方案</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in">
+                    <h3>免费版</h3>
+                    <div class="price">¥0</div>
+                    <ul>
+                        <li>最多列出5个物品</li>
+                        <li>基础AI价格建议</li>
+                        <li>手动处理交易</li>
+                        <li>无平台取货服务</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">选择方案</a>
+                </div>
+                <div class="pricing-card fade-in delay-1">
+                    <h3>高级版</h3>
+                    <div class="price">¥9.9/月</div>
+                    <ul>
+                        <li>无限物品 listing</li>
+                        <li>高级AI价格建议</li>
+                        <li>平台协助交易</li>
+                        <li>优先校园取货服务</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">选择方案</a>
+                </div>
+                <div class="pricing-card fade-in delay-2">
+                    <h3>企业版</h3>
+                    <div class="price">定制</div>
+                    <ul>
+                        <li>无限物品 listing</li>
+                        <li>企业级AI分析</li>
+                        <li>专属客服支持</li>
+                        <li>全面校园服务</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">联系我们</a>
                 </div>
             </div>
-        </section>
-        
-        <!-- Official Sell Section -->
-        <section id="official-sell" class="section official-sell">
-            <div class="container">
-                <h2 class="section-title">官方出售</h2>
-                <div class="sell-content">
-                    <div class="sell-info fade-in">
-                        <h3>快速变现你的物品</h3>
-                        <p>通过官方出售模式，你可以将物品直接出售给平台，获得即时现金，无需等待买家。</p>
-                        <ul>
-                            <li>即时获得现金</li>
-                            <li>平台负责售后</li>
-                            <li>快速处理流程</li>
-                            <li>无需管理交易</li>
-                        </ul>
-                    </div>
-                    <div class="sell-form fade-in delay-1">
-                        <h3>出售给平台</h3>
-                        <form id="official-sell-form">
-                            <div class="form-group">
-                                <label for="official-item-name">物品名称</label>
-                                <input type="text" id="official-item-name" name="official-item-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="official-item-description">物品描述</label>
-                                <textarea id="official-item-description" name="official-item-description" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="official-item-condition">物品状况</label>
-                                <select id="official-item-condition" name="official-item-condition" required>
-                                    <option value="">请选择状况</option>
-                                    <option value="new">全新</option>
-                                    <option value="like-new">几乎全新</option>
-                                    <option value="good">良好</option>
-                                    <option value="fair">一般</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="official-item-images">上传图片</label>
-                                <div class="image-upload">
-                                    <input type="file" id="official-item-images" name="official-item-images" multiple accept="image/*" required>
-                                    <div class="upload-preview" id="official-image-preview"></div>
-                                </div>
-                            </div>
-                            <button type="submit" class="submit-button">获取报价</button>
-                        </form>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- About Us -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>我们的使命</h3>
+                    <p>CampusCycle 诞生于一群大学生的创意，旨在解决毕业季宿舍物品处理的难题。我们相信，每一件闲置物品都有其价值，通过循环利用，不仅可以为学生创造额外收入，还能减少资源浪费，为环保事业做出贡献。</p>
+                    <p>我们的团队由来自不同专业的学生组成，拥有丰富的技术和商业经验。我们致力于打造一个简单、高效、安全的校园循环经济平台，让每一位学生都能轻松参与其中。</p>
+                    <a href="#" class="btn btn-primary">加入我们</a>
+                </div>
+                <div class="about-image fade-in delay-1">
+                    🏫
                 </div>
             </div>
-        </section>
-        
-        <!-- Pricing -->
-        <section id="pricing" class="section pricing">
-            <div class="container">
-                <h2 class="section-title">定价方案</h2>
-                <div class="pricing-cards">
-                    <div class="pricing-card fade-in">
-                        <h3>免费版</h3>
-                        <div class="price">¥0</div>
-                        <ul>
-                            <li>最多列出5个物品</li>
-                            <li>基础AI价格建议</li>
-                            <li>手动处理交易</li>
-                            <li>无平台取货服务</li>
-                        </ul>
-                        <a href="#" class="btn btn-secondary">选择方案</a>
-                    </div>
-                    <div class="pricing-card fade-in delay-1">
-                        <h3>高级版</h3>
-                        <div class="price">¥9.9/月</div>
-                        <ul>
-                            <li>无限物品 listing</li>
-                            <li>高级AI价格建议</li>
-                            <li>平台协助交易</li>
-                            <li>优先校园取货服务</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">选择方案</a>
-                    </div>
-                    <div class="pricing-card fade-in delay-2">
-                        <h3>企业版</h3>
-                        <div class="price">定制</div>
-                        <ul>
-                            <li>无限物品 listing</li>
-                            <li>企业级AI分析</li>
-                            <li>专属客服支持</li>
-                            <li>全面校园服务</li>
-                        </ul>
-                        <a href="#" class="btn btn-secondary">联系我们</a>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>加入我们</h3>
+                    <p>无论你是学生、商家还是投资者，我们都欢迎你加入 CampusCycle 大家庭。</p>
+                    <p><strong>邮箱：</strong>contact@campuscycle.com</p>
+                    <p><strong>电话：</strong>123-456-7890</p>
+                    <p><strong>地址：</strong>北京市海淀区大学路100号</p>
+                </div>
+                <div class="contact-form fade-in delay-1">
+                    <h3>发送消息</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">发送</button>
+                    </form>
                 </div>
             </div>
-        </section>
-        
-        <!-- About Us -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title">关于我们</h2>
-                <div class="about-content">
-                    <div class="about-text fade-in">
-                        <h3>我们的使命</h3>
-                        <p>CampusCycle 诞生于一群大学生的创意，旨在解决毕业季宿舍物品处理的难题。我们相信，每一件闲置物品都有其价值，通过循环利用，不仅可以为学生创造额外收入，还能减少资源浪费，为环保事业做出贡献。</p>
-                        <p>我们的团队由来自不同专业的学生组成，拥有丰富的技术和商业经验。我们致力于打造一个简单、高效、安全的校园循环经济平台，让每一位学生都能轻松参与其中。</p>
-                        <a href="#" class="btn btn-primary">加入我们</a>
-                    </div>
-                    <div class="about-image fade-in delay-1">
-                        🏫
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contact -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title">联系我们</h2>
-                <div class="contact-content">
-                    <div class="contact-info fade-in">
-                        <h3>加入我们</h3>
-                        <p>无论你是学生、商家还是投资者，我们都欢迎你加入 CampusCycle 大家庭。</p>
-                        <p><strong>邮箱：</strong>contact@campuscycle.com</p>
-                        <p><strong>电话：</strong>123-456-7890</p>
-                        <p><strong>地址：</strong>北京市海淀区大学路100号</p>
-                    </div>
-                    <div class="contact-form fade-in delay-1">
-                        <h3>发送消息</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="name">姓名</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">邮箱</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">消息</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-button">发送</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
     
     <!-- Footer -->
     <footer>
@@ -1661,9 +1640,9 @@
                         // 滚动到个人出售页面
                         const personalSellSection = document.querySelector('#personal-sell');
                         if (personalSellSection) {
-                            personalSellSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
+                            window.scrollTo({
+                                top: personalSellSection.offsetTop - 80,
+                                behavior: 'smooth'
                             });
                         }
                         
@@ -1672,16 +1651,19 @@
                             const sellFormContainer = document.getElementById('sell-form-container');
                             if (sellFormContainer) {
                                 sellFormContainer.style.display = 'block';
-                                sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                window.scrollTo({
+                                    top: sellFormContainer.offsetTop - 100,
+                                    behavior: 'smooth'
+                                });
                             }
                         }, 500);
                     } else if (targetId !== '#') {
                         // 其他链接的平滑滚动
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
                             });
                         }
                     }
@@ -2131,9 +2113,9 @@
                     // 滚动到个人出售页面
                     const personalSellSection = document.querySelector('#personal-sell');
                     if (personalSellSection) {
-                        personalSellSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        window.scrollTo({
+                            top: personalSellSection.offsetTop - 80,
+                            behavior: 'smooth'
                         });
                     }
                     
@@ -2142,7 +2124,10 @@
                         const sellFormContainer = document.getElementById('sell-form-container');
                         if (sellFormContainer) {
                             sellFormContainer.style.display = 'block';
-                            sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            window.scrollTo({
+                                top: sellFormContainer.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
                         }
                     }, 500);
                 });
@@ -2156,9 +2141,9 @@
                     // 滚动到官方出售页面
                     const officialSellSection = document.querySelector('#official-sell');
                     if (officialSellSection) {
-                        officialSellSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        window.scrollTo({
+                            top: officialSellSection.offsetTop - 80,
+                            behavior: 'smooth'
                         });
                     }
                 });
@@ -2171,16 +2156,19 @@
                     e.preventDefault();
                     const personalSellSection = document.querySelector('#personal-sell');
                     if (personalSellSection) {
-                        personalSellSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        window.scrollTo({
+                            top: personalSellSection.offsetTop - 80,
+                            behavior: 'smooth'
                         });
                     }
                     setTimeout(() => {
                         const sellFormContainer = document.getElementById('sell-form-container');
                         if (sellFormContainer) {
                             sellFormContainer.style.display = 'block';
-                            sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            window.scrollTo({
+                                top: sellFormContainer.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
                         }
                     }, 500);
                 });
@@ -2192,9 +2180,9 @@
                     e.preventDefault();
                     const officialSellSection = document.querySelector('#official-sell');
                     if (officialSellSection) {
-                        officialSellSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        window.scrollTo({
+                            top: officialSellSection.offsetTop - 80,
+                            behavior: 'smooth'
                         });
                     }
                 });
