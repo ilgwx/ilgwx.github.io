@@ -253,6 +253,231 @@
             box-shadow: var(--box-shadow);
         }
         
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #4CAF50 0%, #2ecc71 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background-color: var(--white);
+        }
+        
+        .impact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .impact-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .impact-text p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .impact-stat {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .impact-stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .impact-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .impact-stat-label {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--background-color);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4CAF50, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 3px;
+        }
+        
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--light-text);
+        }
+        
+        .testimonial-rating {
+            margin-bottom: 15px;
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-cta-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-cta-primary:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        }
+        
+        .btn-cta-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid white;
+        }
+        
+        .btn-cta-secondary:hover {
+            background-color: white;
+            color: #1a1a2e;
+            transform: translateY(-3px);
+        }
+        
         /* How It Works */
         .how-it-works {
             background-color: var(--white);
@@ -807,6 +1032,43 @@
                 align-items: center;
             }
             
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .impact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-cta-primary,
+            .btn-cta-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
+            
             .step {
                 padding: 20px;
             }
@@ -819,6 +1081,28 @@
             
             .section-title {
                 font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .sell-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .nav-links {
+                max-height: 70vh;
+                overflow-y: auto;
             }
         }
         
@@ -863,8 +1147,10 @@
                     <span></span>
                 </div>
                 <ul class="nav-links">
+                    <li><a href="#stats">数据</a></li>
                     <li><a href="#how-it-works">如何运作</a></li>
                     <li><a href="#features">功能</a></li>
+                    <li><a href="#impact">影响力</a></li>
                     <li><a href="#products">产品</a></li>
                     <li><a href="#personal-sell">个人出售</a></li>
                     <li><a href="#official-sell">官方出售</a></li>
@@ -886,8 +1172,68 @@
                     <h1>Turn your dorm clutter into cash</h1>
                     <p>CampusCycle 是专为大学生设计的循环经济平台，让你轻松出售闲置物品，获得即时现金，同时为环保贡献力量。</p>
                     <div class="hero-buttons">
-                        <a href="#personal-sell" class="btn btn-primary" id="hero-personal-sell-btn">个人出售</a>
-                        <a href="#official-sell" class="btn btn-secondary">官方出售</a>
+                        <a href="#personal-sell" class="btn btn-primary" id="hero-personal-sell-btn">立即出售</a>
+                        <a href="#official-sell" class="btn btn-secondary">获取即时报价</a>
+                    </div>
+                    <p style="margin-top: 30px; color: var(--light-text); font-size: 0.95rem;">已有 5,000+ 大学生加入平台 · 累计交易额超过 ¥2,000,000</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section id="stats" class="section stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">物品已回收</div>
+                    </div>
+                    <div class="stat-item fade-in delay-1">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">活跃用户</div>
+                    </div>
+                    <div class="stat-item fade-in delay-2">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">覆盖高校</div>
+                    </div>
+                    <div class="stat-item fade-in delay-3">
+                        <div class="stat-number">¥2M+</div>
+                        <div class="stat-label">累计交易额</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Impact Section -->
+        <section id="impact" class="section impact">
+            <div class="container">
+                <div class="impact-content">
+                    <div class="impact-text fade-in">
+                        <h3>我们的环境影响</h3>
+                        <p>每一次循环利用，都在为地球减负。CampusCycle 不仅帮助学生变现闲置物品，更在推动校园可持续发展。</p>
+                        <p>通过我们的平台，减少的资源浪费和碳排放正在让我们的校园和城市变得更加绿色、环保。</p>
+                    </div>
+                    <div class="impact-stats fade-in delay-1">
+                        <div class="impact-stat">
+                            <div class="impact-stat-icon">🌱</div>
+                            <div class="impact-stat-number">50吨</div>
+                            <div class="impact-stat-label">减少碳排放</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-stat-icon">💧</div>
+                            <div class="impact-stat-number">100吨</div>
+                            <div class="impact-stat-label">节约用水</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-stat-icon">♻️</div>
+                            <div class="impact-stat-number">30吨</div>
+                            <div class="impact-stat-label">减少废弃物</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="impact-stat-icon">🌍</div>
+                            <div class="impact-stat-number">200+</div>
+                            <div class="impact-stat-label">树木等价效应</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -923,28 +1269,84 @@
                 <h2 class="section-title">核心功能</h2>
                 <div class="features-grid">
                     <div class="feature-card fade-in">
-                        <h3>AI价格建议</h3>
-                        <p>基于市场数据和物品状况，我们的AI系统会为你提供最合理的价格建议，帮助你快速出售。</p>
+                        <h3>🤖 AI智能定价</h3>
+                        <p>基于市场数据和AI算法，我们为每个物品提供最合理的价格建议，让你轻松定价，快速出售。</p>
                     </div>
                     <div class="feature-card fade-in delay-1">
-                        <h3>校园匹配</h3>
-                        <p>我们优先匹配同一校园内的买家和卖家，减少物流成本，提高交易效率。</p>
+                        <h3>🎯 精准校园匹配</h3>
+                        <p>优先匹配同校买家和卖家，减少物流成本，提高交易效率，让校园交易更便捷。</p>
                     </div>
                     <div class="feature-card fade-in delay-2">
-                        <h3>即时现金</h3>
-                        <p>选择直接出售给平台，立即获得现金，无需等待买家。</p>
+                        <h3>⚡ 即时现金变现</h3>
+                        <p>选择官方出售模式，立即获得现金，无需等待买家，资金快速到账。</p>
                     </div>
                     <div class="feature-card fade-in delay-3">
-                        <h3>校园取货</h3>
-                        <p>我们提供校园内取货服务，让你足不出户完成交易。</p>
+                        <h3>🚚 校园取货服务</h3>
+                        <p>我们提供校园内上门取货服务，让你足不出户完成交易，省时省力。</p>
                     </div>
                     <div class="feature-card fade-in">
-                        <h3>一键宿舍清理</h3>
-                        <p>毕业生专属服务，一键清理宿舍所有闲置物品，轻松离校。</p>
+                        <h3>🧹 一键宿舍清理</h3>
+                        <p>毕业生专属服务，一键清理宿舍所有闲置物品，轻松离校，不再为处理旧物烦恼。</p>
                     </div>
                     <div class="feature-card fade-in delay-1">
-                        <h3>环保贡献</h3>
-                        <p>通过循环利用，减少资源浪费，为环保事业贡献力量。</p>
+                        <h3>🌍 环保可持续</h3>
+                        <p>通过循环利用，减少资源浪费，每一笔交易都在为环保事业做贡献。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="section-title">用户评价</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-content">"马上要毕业了，宿舍里一堆东西不知道怎么处理。CampusCycle帮我把教材和小电器都卖掉了，还赚了一笔生活费！"</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">李</div>
+                            <div class="testimonial-info">
+                                <h4>李同学</h4>
+                                <p>北京大学 · 应届毕业生</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in delay-1">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-content">"买了一个学长的旧笔记本，比新的便宜了一半，性能还很好。平台的校园匹配功能让我在同校找到了卖家，超方便！"</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">张</div>
+                            <div class="testimonial-info">
+                                <h4>张同学</h4>
+                                <p>清华大学 · 研究生二年级</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in delay-2">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-content">"AI价格建议功能真的很准！我以为自己定价会很难，没想到系统给的建议让我很快就卖出了物品。"</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">王</div>
+                            <div class="testimonial-info">
+                                <h4>王同学</h4>
+                                <p>复旦大学 · 大三学生</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>准备好开始了吗？</h2>
+                    <p>加入 CampusCycle，让你的闲置物品焕发新生，同时为环保贡献一份力量。</p>
+                    <div class="cta-buttons">
+                        <a href="#personal-sell" class="btn-cta-primary" id="cta-sell-btn">立即出售</a>
+                        <a href="#official-sell" class="btn-cta-secondary" id="cta-quote-btn">获取即时报价</a>
                     </div>
                 </div>
             </div>
@@ -1760,6 +2162,89 @@
                         });
                     }
                 });
+            }
+            
+            // CTA 按钮点击事件
+            const ctaSellBtn = document.getElementById('cta-sell-btn');
+            if (ctaSellBtn) {
+                ctaSellBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const personalSellSection = document.querySelector('#personal-sell');
+                    if (personalSellSection) {
+                        personalSellSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    setTimeout(() => {
+                        const sellFormContainer = document.getElementById('sell-form-container');
+                        if (sellFormContainer) {
+                            sellFormContainer.style.display = 'block';
+                            sellFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 500);
+                });
+            }
+            
+            const ctaQuoteBtn = document.getElementById('cta-quote-btn');
+            if (ctaQuoteBtn) {
+                ctaQuoteBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const officialSellSection = document.querySelector('#official-sell');
+                    if (officialSellSection) {
+                        officialSellSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+            
+            // 数字动画效果
+            function animateNumbers() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = stat.textContent;
+                    const hasPlus = target.includes('+');
+                    const hasM = target.includes('M');
+                    const numTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
+                    
+                    let current = 0;
+                    const increment = numTarget / 50;
+                    const duration = 2000;
+                    const stepTime = duration / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= numTarget) {
+                            current = numTarget;
+                            clearInterval(timer);
+                        }
+                        
+                        let displayValue;
+                        if (hasM) {
+                            displayValue = '¥' + current.toFixed(1) + 'M';
+                        } else {
+                            displayValue = Math.floor(current).toLocaleString();
+                            if (hasPlus) displayValue += '+';
+                        }
+                        stat.textContent = displayValue;
+                    }, stepTime);
+                });
+            }
+            
+            // 当 stats 部分可见时触发动画
+            const statsSection = document.querySelector('#stats');
+            if (statsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateNumbers();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(statsSection);
             }
             
             // 个人出售表单提交
